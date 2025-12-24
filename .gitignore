@@ -1,0 +1,17 @@
+.idea/
+
+.DS_Store
+._*
+.~*#
+*.pyc
+*.swp
+*.swo
+*.swn
+.svn
+*.orig
+*.egg-info
+bandit-report.html
+
+tmp/
+db.csv
+*.session
