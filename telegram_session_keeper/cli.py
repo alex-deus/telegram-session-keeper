@@ -32,7 +32,7 @@ def create(action: str, phone: int) -> None:
         click.secho(f"Unknown {action=}", fg="yellow", err=True)
 
 
-@cli.command
+@cli.command(name="list")
 def show_list() -> None:
     rows = db.get_sessions_list()
 
@@ -44,7 +44,7 @@ def show_list() -> None:
 @cli.command
 @click.option("-p", "--phone", type=str, required=True, help="Phone number as digits")
 @click.option("-t", "--timeout", type=int, default=60, help="Timeout for waiting in secs")
-def get_code(phone: int, timeout: int) -> None:
+def code(phone: int, timeout: int) -> None:
     session: str | None = db.get_session(str(phone))
     if not session:
         return click.secho("Session was not found", fg="yellow", err=True)
