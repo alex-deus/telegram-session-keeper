@@ -12,6 +12,7 @@
 *.egg-info
 bandit-report.html
 
+db.csv
 tmp/
 data/
 *.session
