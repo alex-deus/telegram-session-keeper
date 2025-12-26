@@ -1,7 +1,7 @@
 # Telegram Session Keeper CLI
 The library allows logging into a Telegram account and storing the session so that it can later be used to obtain a verification code for logging into the same account on another device.
 
-# CLI
+# How to use
 ## Create Telegram credentials
   - Login at [my.telegram.org](https://my.telegram.org)
   - Create an app at [my.telegram.org/apps](https://my.telegram.org/apps)
