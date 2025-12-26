@@ -6,7 +6,7 @@ __all__ = ["settings"]
 
 
 class Settings(BaseSettings):
-    log_level: str = "INFO"
+    log_level: str = "WARNING"
 
     api_id: int
     api_hash: str
