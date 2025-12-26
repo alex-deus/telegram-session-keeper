@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "Telegram Session Keeper"
 version = "0.1.0"
-description = ""
-authors = []
+description = "The library allows logging into a Telegram account and storing the session so that it can later be used to obtain a verification code for logging into the same account on another device."
+authors = [ "Alex Deus" ]
 readme = "README.md"
 package-mode = false
 
