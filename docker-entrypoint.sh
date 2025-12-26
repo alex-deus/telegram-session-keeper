@@ -11,6 +11,6 @@ case "${1}" in
         exec bash -c "while true; do sleep 20; done"
         ;;
     "cli")
-        exec ./cli.py ${args[@]:1}
+        exec ./telegram_session_keeper/cli.py ${args[@]:1}
         ;;
 esac
