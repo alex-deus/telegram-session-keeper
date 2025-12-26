@@ -13,5 +13,5 @@
 bandit-report.html
 
 tmp/
-db.csv
+data/
 *.session
