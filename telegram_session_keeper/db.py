@@ -69,6 +69,11 @@ def remove_session(phone: str) -> bool:
 
 
 def get_sessions_list() -> list:
+    if not settings.db_path.exists():
+        with open(settings.db_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(HEADERS)
+
     with open(settings.db_path, "r", newline="", encoding="utf-8") as f:
         fcntl.flock(f, fcntl.LOCK_EX)  # Lock file
         reader = csv.DictReader(f)
