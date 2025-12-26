@@ -10,9 +10,10 @@ class Settings(BaseSettings):
 
     api_id: int
     api_hash: str
+
     db_path: Path = Path("db.csv")
 
-    model_config = SettingsConfigDict(env_prefix="", case_sensitive=False, extra="ignore")
+    model_config = SettingsConfigDict(case_sensitive=False, extra="ignore")
 
 
 settings = Settings()
