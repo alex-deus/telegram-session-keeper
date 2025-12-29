@@ -27,7 +27,7 @@ docker run \
   -e api_hash=<App api_hash> \
   -e db_path=data/db.csv \
   -v $(pwd)/data:/app/src/data \
-  telegram-session-keeper:latest \
+  deusalex/telegram-session-keeper-cli \
   cli <command> [arg]
 ```
 - keep file `data/db.csv`
