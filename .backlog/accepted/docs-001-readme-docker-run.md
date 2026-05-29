@@ -3,7 +3,7 @@
 ## Metadata
 
 - **ID**: docs-001-readme-docker-run
-- **Status**: completed
+- **Status**: accepted
 - **Priority**: medium
 - **Estimated Hours**: 1
 - **Assigned Agent**: python-engineer
@@ -103,6 +103,7 @@ README.md at the repo root must contain a dedicated section with complete, copy-
 | 2026-05-29 05:25:52          | draft | pending | task-engineer | Initial task creation |
 | 2026-05-29 03:28:46          | pending | in-progress | python-engineer | Starting implementation |
 | 2026-05-29 03:31:15          | in-progress | completed | python-engineer | README.md updated with docker run docs for all 4 commands |
+| 2026-05-29 04:53:53          | completed | accepted | quality-reviewer | All acceptance criteria met |
 
 ## Implementation Notes
 
@@ -114,12 +115,19 @@ Rewrote README.md to include complete `docker run` examples for all four CLI com
 
 ### Review Round 1
 
-- **Date**: [Date]
+- **Date**: 2026-05-29 04:53:53 UTC
 - **Reviewer**: quality-reviewer
-- **Decision**: [accepted|rejected]
+- **Decision**: accepted
 - **Comments**:
-  - [Specific feedback point 1]
-  - [Specific feedback point 2]
+  - All four `docker run` examples present (`create`, `list`, `code`, `remove`) using image `deusalex/telegram-session-keeper-cli`
+  - `create` includes `-it` flag and a blockquote warning that omitting it causes the container to hang waiting for interactive Telegram login input
+  - `create` examples show both `-a save` and `-a display` variants
+  - `code` example includes `-t 120` demonstrating the optional timeout flag
+  - All examples use volume mount `$(pwd)/data:/app/src/data`
+  - Environment variables table correctly documents `api_id` and `api_hash` as required (no default) and `db_path`, `log_level` as optional with defaults
+  - "Create Telegram credentials" section retained
+  - Line 22 explicitly states `api_id` and `api_hash` "have no default and must always be supplied"
+  - Git commit `fa50c4e` follows conventional commit format (`docs: ...`)
 
 ### Review Round 2 (if rejected)
 
