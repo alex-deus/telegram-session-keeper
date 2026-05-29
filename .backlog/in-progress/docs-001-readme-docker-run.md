@@ -3,7 +3,7 @@
 ## Metadata
 
 - **ID**: docs-001-readme-docker-run
-- **Status**: pending
+- **Status**: in-progress
 - **Priority**: medium
 - **Estimated Hours**: 1
 - **Assigned Agent**: python-engineer
@@ -101,6 +101,7 @@ README.md at the repo root must contain a dedicated section with complete, copy-
 | Date Time                    | From  | To      | Agent         | Reason/Comment        |
 | ---------------------------- | ----- | ------- | ------------- | --------------------- |
 | 2026-05-29 05:25:52          | draft | pending | task-engineer | Initial task creation |
+| 2026-05-29 03:28:46          | pending | in-progress | python-engineer | Starting implementation |
 
 ## Implementation Notes
 
