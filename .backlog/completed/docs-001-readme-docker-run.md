@@ -3,7 +3,7 @@
 ## Metadata
 
 - **ID**: docs-001-readme-docker-run
-- **Status**: in-progress
+- **Status**: completed
 - **Priority**: medium
 - **Estimated Hours**: 1
 - **Assigned Agent**: python-engineer
@@ -102,12 +102,11 @@ README.md at the repo root must contain a dedicated section with complete, copy-
 | ---------------------------- | ----- | ------- | ------------- | --------------------- |
 | 2026-05-29 05:25:52          | draft | pending | task-engineer | Initial task creation |
 | 2026-05-29 03:28:46          | pending | in-progress | python-engineer | Starting implementation |
+| 2026-05-29 03:31:15          | in-progress | completed | python-engineer | README.md updated with docker run docs for all 4 commands |
 
 ## Implementation Notes
 
-<!-- Implementer adds notes during development -->
-
-[Space for implementation notes, discoveries, decisions made during development]
+Rewrote README.md to include complete `docker run` examples for all four CLI commands (`create`, `list`, `code`, `remove`) using image `deusalex/telegram-session-keeper-cli`. Added an environment variables table documenting required (`api_id`, `api_hash`) and optional (`db_path`, `log_level`) vars with types and defaults, and included a clear warning that `create` requires `-it` to avoid the container stalling on interactive Telegram login input.
 
 ## Quality Review Comments
 
@@ -141,17 +140,24 @@ README.md at the repo root must contain a dedicated section with complete, copy-
 
 ## Evidence of Completion
 
-<!-- Paste evidence showing task is complete -->
+README.md now contains:
+- Environment variables table documenting `api_id` (required, int), `api_hash` (required, str), `db_path` (optional, default: `db.csv`), `log_level` (optional, default: `WARNING`)
+- `create` example with `-it` flag, `-a save|display` option, and note about interactive Telegram login
+- `list` example
+- `code` example with `-t <timeout_secs>` option
+- `remove` example
+- All examples use image `deusalex/telegram-session-keeper-cli`, pass env vars via `-e`, and mount `$(pwd)/data:/app/src/data`
 
 ```bash
-# Manual verification
-$ docker run --rm \
-    -e api_id=<your_api_id> \
-    -e api_hash=<your_api_hash> \
-    -v $(pwd)/data:/app/src/data \
-    deusalex/telegram-session-keeper-cli \
-    cli list
-# Expected: lists saved phone numbers (or empty output if none saved)
+# docker run list example from updated README.md
+docker run --rm \
+  -e api_id=<App api_id> \
+  -e api_hash=<App api_hash> \
+  -e db_path=data/db.csv \
+  -v $(pwd)/data:/app/src/data \
+  deusalex/telegram-session-keeper-cli \
+  cli list
+# Expected: prints Phone / Created header and any saved sessions
 ```
 
 ## References
